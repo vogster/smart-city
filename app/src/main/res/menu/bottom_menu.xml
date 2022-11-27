@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_main"
+        android:title="Главная"
+        android:icon="@drawable/ic_menu_home"/>
+
+    <item
+        android:id="@+id/menu_bids"
+        android:title="Заявки"
+        android:icon="@drawable/ic_menu_bids"/>
+
+    <item
+        android:id="@+id/menu_map"
+        android:title="Карта"
+        android:icon="@drawable/ic_menu_map"/>
+
+    <item
+        android:id="@+id/menu_profile"
+        android:title="Профиль"
+        android:icon="@drawable/ic_menu_profile"/>
+</menu>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "587346819270",
+    "project_id": "gorod-369515",
+    "storage_bucket": "gorod-369515.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587346819270:android:5fc8d20f62af72e37d7fc7",
+        "android_client_info": {
+          "package_name": "com.zx.gorod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587346819270-6c68adj1mbqmu9q8b1p7ainbao6o1grs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9UKZLy0sIIDQoBemWsFfAgMs33SFdL80"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587346819270-6c68adj1mbqmu9q8b1p7ainbao6o1grs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

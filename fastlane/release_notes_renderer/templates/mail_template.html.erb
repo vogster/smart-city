@@ -1,0 +1,7 @@
+<% @groups.each do |title, issues| %>
+<br><b><%= title %></b><br>
+<% issues.each do |issue| %>
+<% url = "#{@base_url}browse/#{issue.key}" %>
+[<a href="<%= url %>"><%= issue.key %></a>] - <%= CGI::escapeHTML(issue.summary) %><br>
+<% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<%= @build_type %> — v. <%= @version %>
+
+<% @groups.each do |title, issues| %>
+
+<%= title %>
+
+<% issues.each do |issue| %>
+[<%= issue.key %>] - <%= issue.summary %>
+
+<% end %>
+<% end %>

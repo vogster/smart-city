@@ -1,0 +1,81 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext {
+        versions = [
+                kotlin: "1.6.10",
+                androidX: [
+                        core: '1.7.0',
+                        compat: '1.4.1',
+                        material: '1.5.0',
+                        constraint: '2.1.3',
+                        annotation: '1.1.0'
+                ],
+                dagger: '2.38.1',
+                moxy: '2.2.2',
+                retrofit: '2.9.0',
+                okHttp: '4.9.0',
+                rx: [
+                        java: "2.2.19",
+                        android: "2.1.1",
+                        kotlin: "2.4.0"
+                ],
+                glide: '4.12.0',
+                test: [
+                        junit: "4.13.2",
+                        ext: "1.1.2",
+                        espresso: "3.3.0"
+                ],
+                firebase: [
+                        analytics: '20.1.0',
+                        crashlytics: '18.2.8'
+                ],
+                utils: [
+                        permissions: "0.10.2",
+                        inputMask : '6.0.0'
+                ],
+                google: [
+                        places: '2.6.0',
+                        maps: '18.1.0',
+                        authPhone: '18.0.1'
+                ],
+        ]
+    }
+
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.0.4'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+        maven {
+            url 'https://api.mapbox.com/downloads/v2/releases/maven'
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username = 'mapbox'
+                // Use the secret token you stored in gradle.properties as the password
+                password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
+            }
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,33 @@
+# Project names
+ENV["PROJECT_NAME"] = "Zaptain"
+
+
+# Jira login data
+ENV["FL_JIRA_SITE"] = "https://jira.8adm.com/"
+ENV["FL_JIRA_USERNAME"] = "mobile.bot"
+ENV["FL_JIRA_PASSWORD"] = "Ice-Cold38"
+ENV["FL_JIRA_PROJECT"] = "ZAP"
+
+
+# Gmail login data
+ENV["FL_GMAIL_DOMAIN"] = "dats.cloud"
+ENV["FL_GMAIL_USERNAME"] = "mobiletechbot@dats.cloud"
+ENV["FL_GMAIL_PASSWORD"] = "qzqpsoqzfzqdyjgc"
+
+
+# Firebase App Distributions Url
+ENV["FIREBASE_APP_DISTRIBUTION_URL"] = "https://console.firebase.google.com/u/4/project/zap-android-326606/appdistribution/app/android:ru.bullyboo.application/releases"
+
+
+# Firebase App Distributions Url
+ENV["FIREBASE_APP_ID"] = "1:552916602964:android:73a28d35624eaeee771dc1"
+
+
+# Telegram bot data
+ENV['TG_BOT_TOKEN'] = "2022840670:AAH1XNsr0_Dfp2TmppxbFJcO-cWvx13GL-g"
+ENV['TG_CHAT_ID'] = "-1001519057384"
+
+
+# Base urls
+ENV['URL_DEVELOP'] = "https://app.dev.zaptain.com/"
+ENV['URL_QA'] = "https://app.test.zaptain.com/"

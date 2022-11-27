@@ -1,0 +1,83 @@
+require_relative "release_notes_renderer/release_notes_renderer"
+require_relative "src/build_class"
+require_relative "src/utils"
+
+default_platform(:android)
+
+platform :android do
+
+    # region start
+    # Lanes
+    # **********************************************************************************************
+    lane :develop_debug do
+        buildData = BuildData.new
+        buildData.setDebugType()
+        buildData.setDevelopFlavour()
+
+        buildData = applyBuildData(buildData)
+
+        process(buildData)
+    end
+
+    lane :qa_debug do
+        buildData = BuildData.new
+        buildData.setDebugType()
+        buildData.setQaFlavour()
+
+        buildData = applyBuildData(buildData)
+
+        process(buildData)
+    end
+    # **********************************************************************************************
+    # region end
+
+
+
+    # region start
+    # Lanes
+    # **********************************************************************************************
+    def applyBuildData(buildData)
+        buildData.setProjectName(ENV["PROJECT_NAME"])
+        buildData.setJiraProjectName(ENV["FL_JIRA_PROJECT"])
+        buildData.setFirebaseAppId(ENV["FIREBASE_APP_ID"])
+        buildData.setAppDistributionUrl(ENV["FIREBASE_APP_DISTRIBUTION_URL"])
+
+        return buildData
+    end
+    # **********************************************************************************************
+    # region end
+
+
+
+    # region start
+    # Functions for execute lane
+    # **********************************************************************************************
+    def process(buildData)
+
+        # Set version name
+        versionName = getVersionName()
+        buildData.setVersionName(versionName)
+
+        # Set version code
+        versionCode = getVersionCode()
+        buildData.setVersionCode(versionCode)
+
+        # Build Project
+        buildProject(buildData)
+
+        # Upload APK to Firebase App Distribution
+        uploadToFirebase(buildData)
+
+        # Send message to Gmail
+        # sendGmail(buildData)
+
+        # Send message to Telegram Channel
+        sendTelegram(buildData)
+
+        # Remove artifacts
+        gradle(task: "clean")
+    end
+    # **********************************************************************************************
+    # region end
+
+end
